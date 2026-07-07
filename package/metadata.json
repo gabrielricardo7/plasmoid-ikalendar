@@ -1,0 +1,21 @@
+{
+    "KPlugin": {
+        "Authors": [
+            {
+                "Email": "gabrielricardo7@gmail.com",
+                "Name": "Gabriel Ricardo"
+            }
+        ],
+        "Category": "Date and Time",
+        "Description": "A macOS-inspired calendar badge",
+        "Icon": "view-calendar",
+        "Id": "plasmoid-ikalendar",
+        "Name": "iKalendar",
+        "Version": "1.0.0",
+        "License": "GPL-3.0-or-later",
+        "Website": "https://github.com/gabrielricardo7/plasmoid-ikalendar",
+        "BugReportUrl": "https://github.com/gabrielricardo7/plasmoid-ikalendar/issues"
+    },
+    "X-Plasma-API-Minimum-Version": "6.0",
+    "KPackageStructure": "Plasma/Applet"
+}
