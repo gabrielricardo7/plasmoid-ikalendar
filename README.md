@@ -41,6 +41,10 @@ kpackagetool6 --type Plasma/Applet --install plasmoid-ikalendar/package/
 
 Feel free to open issues or submit pull requests.
 
-## 📄 Licence
+## 📄 Licensing & Third-Party Assets
 
-Distributed under the `GPL-3.0` licence. See the `LICENSE` file for details.
+This project is distributed under the **GPL-3.0-or-later** licence. See the [LICENSE](LICENSE) file for details.
+
+It bundles the following third-party components:
+
+- **Inter Font Family** by Rasmus Andersson. Used under the [SIL Open Font License 1.1](package/contents/fonts/OFL-1.1.txt). Source: [GitHub](https://github.com/rsms/inter).
