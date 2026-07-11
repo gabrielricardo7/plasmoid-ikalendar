@@ -14,8 +14,12 @@ KCM.SimpleKCM {
 
     property alias cfg_darkMode: darkModeBox.checked
     property alias cfg_themeMode: themeCombo.currentValue
+    property alias cfg_weekNumbers: weekNumbersBox.checked
+    property alias cfg_firstDay: firstDayCombo.currentValue
     property bool cfg_darkModeDefault: configuration.darkMode
     property string cfg_themeModeDefault: configuration.themeMode
+    property bool cfg_weekNumbersDefault: configuration.weekNumbers
+    property int cfg_firstDayDefault: configuration.firstDay
 
     Kirigami.FormLayout {
         anchors.right: parent.right
@@ -77,6 +81,67 @@ KCM.SimpleKCM {
         CheckBox {
             id: darkModeBox
             text: i18n("Use dark mode")
+        }
+        Kirigami.Separator {
+            Kirigami.FormData.isSection: true
+            Kirigami.FormData.label: i18n("Calendar")
+        }
+        CheckBox {
+            id: weekNumbersBox
+            text: i18n("Show week numbers")
+        }
+        ComboBox {
+            id: firstDayCombo
+
+            Kirigami.FormData.label: i18n("First day of week:")
+
+            textRole: "text"
+            valueRole: "value"
+            model: [
+                {
+                    text: i18n("Use region defaults"),
+                    value: Qt.locale().firstDayOfWeek
+                },
+                {
+                    text: i18n("Sunday"),
+                    value: Locale.Sunday
+                },
+                {
+                    text: i18n("Monday"),
+                    value: Locale.Monday
+                },
+                {
+                    text: i18n("Tuesday"),
+                    value: Locale.Tuesday
+                },
+                {
+                    text: i18n("Wednesday"),
+                    value: Locale.Wednesday
+                },
+                {
+                    text: i18n("Thursday"),
+                    value: Locale.Thursday
+                },
+                {
+                    text: i18n("Friday"),
+                    value: Locale.Friday
+                },
+                {
+                    text: i18n("Saturday"),
+                    value: Locale.Saturday
+                }
+            ]
+            onActivated: index => {
+                cfg_firstDay = model[index].value;
+            }
+            Component.onCompleted: {
+                for (let i = 0; i < model.length; ++i) {
+                    if (model[i].value === cfg_firstDay) {
+                        currentIndex = i;
+                        break;
+                    }
+                }
+            }
         }
     }
 }

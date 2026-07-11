@@ -2,7 +2,7 @@
 
 ![📅](./screenshots/plasmoid-ikalendar-v1.0.0.png)
 
-iKalendar is a widget for KDE Plasma 6 that dynamically displays the current date (abbreviated month and day);\
+iKalendar is a widget for KDE Plasma 6 that dynamically displays the current date (abbreviated month and day) and popups system calendar at click;\
 It's a macOS-inspired calendar badge.
 
 ## 💻 Install
@@ -36,6 +36,8 @@ kpackagetool6 --type Plasma/Applet --install plasmoid-ikalendar/package/
 
 - [x] **Accent colour:** ${\color{#FFD60A}█ yellow}$, ${\color{#FF3B30}█ red}$, ${\color{#AF52DE}█ purple}$, ${\color{#FF9500}█ orange}$, ${\color{#32D74B}█ green}$, ${\color{#0A84FF}█ blue}$ or █ auto (system).
 - [ ] **Use dark mode** *(optional, **default:** `false`)*.
+- [ ] **Show week numbers** *(optional, **default:** `false`)*.
+- [x] **First day of week:** `Use region defaults` or choose a week day *(**default:** `Sunday`)*.
 
 ## 🤝 Contributing
 
