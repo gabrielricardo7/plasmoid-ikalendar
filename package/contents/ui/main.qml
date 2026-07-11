@@ -15,16 +15,18 @@ PlasmoidItem {
     property date now: new Date()
     property string month: Qt.locale().monthName(now.getMonth(), Locale.ShortFormat).toUpperCase()
     property real radiusValue: width * 0.20
-    property string mode: root.Plasmoid.configuration.themeMode
-    property bool darkMode: root.Plasmoid.configuration.darkMode
+    property string mode: Plasmoid.configuration.themeMode
+    property bool darkMode: Plasmoid.configuration.darkMode
     property var p: setPalette()
 
     width: 96
     height: 96
+    toolTipMainText: Plasmoid.title
+    toolTipSubText: now.toLocaleDateString(Qt.locale())
 
     readonly property double aspectRatio: 1.0
 
-    compactRepresentation: Item {}
+    compactRepresentation: Widget {}
     FontLoader {
         id: fontBlack
         source: "../fonts/Inter-Black.ttf"
@@ -33,7 +35,7 @@ PlasmoidItem {
         id: fontRegular
         source: "../fonts/Inter-Regular.ttf"
     }
-    fullRepresentation: Widget {}
+    fullRepresentation: Popup {}
     onWidthChanged: {
         let targetHeight = width;
         if (height !== targetHeight) {
@@ -46,11 +48,12 @@ PlasmoidItem {
             width = targetWidth;
         }
     }
-    preferredRepresentation: fullRepresentation
+    preferredRepresentation: compactRepresentation
     Timer {
         interval: 60000
         running: true
         repeat: true
+        triggeredOnStart: true
         onTriggered: root.now = new Date()
     }
     function setPalette() {
