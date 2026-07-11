@@ -24,7 +24,8 @@ Item {
             Layout.fillHeight: true
             today: root.now
             currentDate: root.now
-            showWeekNumbers: true
+            showWeekNumbers: root.weekNumbers
+            firstDayOfWeek: root.firstDay
         }
     }
 }

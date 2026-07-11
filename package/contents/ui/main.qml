@@ -18,6 +18,8 @@ PlasmoidItem {
     property string mode: Plasmoid.configuration.themeMode
     property bool darkMode: Plasmoid.configuration.darkMode
     property var p: setPalette()
+    property bool weekNumbers: Plasmoid.configuration.weekNumbers
+    property int firstDay: Plasmoid.configuration.firstDay
 
     width: 96
     height: 96
